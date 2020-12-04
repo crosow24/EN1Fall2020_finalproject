@@ -14,40 +14,78 @@
 		<service-spike id="service_spike"></service-spike>
 	</div>
 
-	<h1>My Project (Local Interface)</h1>
-
-	<!-- CREATE YOUR PROJECT HERE -->
 	<h1>Demo 13: Shooter Project</h1>
 
-	<p>This project-demo shows how to adjust motor positions in a shooter robot.</p>
+  <p>This project-demo shows how to adjust motor positions in a shooter robot.</p>
 
-	<h2>Local Interface</h2>
+  <h2>Local Interface</h2>
 
 	<div class="cloud_check">
 		<b><em>Monitor Cloud:</em></b>
-<!--CLOUD[position_horizontal]    CLOUD[position_vertical]-->
-		<div type="cloud_check" cloud_compare="equal" cloud_action="download_code">
+
+	  <div type="cloud_check" cloud_compare="equal" cloud_action="download_code">
 			<input type=text id="cloud_name" value="command">
 			<input type=text id="cloud_value" value="Aim and Shoot">
-			<input type=text id="cloud_action_val" value="1">
+      <input type=text id="cloud_action_val" value="0">
 			<textarea id="cloud_code"># MicroPython for LEGO Hardware (LEGO Education's SPIKE Prime)
-from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
-from spike.control import wait_for_seconds, wait_until, Timer
+from spike import PrimeHub, Motor
+from spike.control import wait_for_seconds
 
-hub = PrimeHub()
-
-hub.light_matrix.show_image('HAPPY')
-panMotor = Motor('E')
-tiltMotor = Motor('C')
-
-panMotor.run_to_position(CLOUD[position_horizontal])
-tiltMotor.run_to_position(CLOUD[position_vertical], 'shortest path', 10)
-tiltMotor.run_to_position(35, 'shortest path', 100)</textarea>
+# horizontal position on Motor A:
+h_motor = Motor('A')
+h_motor.run_to_position(CLOUD[position_horizontal],'shortest path',20)
+# vertical position on Motor B:
+v_motor = Motor('B')
+v_motor.run_to_position(CLOUD[position_vertical],'shortest path',20)
+# shooter on Motor C:
+s_motor = Motor('C')
+s_motor.start(100)
+wait_for_seconds(2)
+s_motor.stop()</textarea>
 			<input type=text id="cloud_reset" value="">
+    </div>
+
+	</div>
+	
+	<div class="cloud_check">
+		<b><em>Monitor Cloud:</em></b>
+
+	  <div type="cloud_check" cloud_compare="equal" cloud_action="run_slot">
+		    <input type=text id="cloud_name" value="command">
+		    <input type=text id="cloud_value" value="Increment Angle">
+		    <input type=text id="cloud_action_val" value="7">
+		</div>
+
+		<div type="cloud_check" cloud_compare="equal" cloud_action="run_slot">
+			<input type=text id="cloud_name" value="command">
+			<input type=text id="cloud_value" value="Decrement Angle">
+			<input type=text id="cloud_action_val" value="6">
+		</div>
+
+		<div type="cloud_check" cloud_compare="equal" cloud_action="run_slot">
+			<input type=text id="cloud_name" value="command">
+			<input type=text id="cloud_value" value="Slow Throw">
+			<input type=text id="cloud_action_val" value="8">
+		</div>
+		
+		<div type="cloud_check" cloud_compare="equal" cloud_action="run_slot">
+			<input type=text id="cloud_name" value="command">
+			<input type=text id="cloud_value" value="Moderate Speed Throw">
+			<input type=text id="cloud_action_val" value="9">
+		</div>
+		
+		<div type="cloud_check" cloud_compare="equal" cloud_action="run_slot">
+			<input type=text id="cloud_name" value="command">
+			<input type=text id="cloud_value" value="Fast Throw">
+			<input type=text id="cloud_action_val" value="10">
+		</div>
+		
+		<div type="cloud_check" cloud_compare="equal" cloud_action="stop_slot">
+		    <input type=text id="cloud_name" value="command">
+		    <input type=text id="cloud_value" value="Stop">
 		</div>
 
 	</div>
-	<hr>
 
 	<h2>My Project Quick Links:</h2>
   <p>

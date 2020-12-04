@@ -21,7 +21,7 @@
   <p>This project-demo shows how to adjust motor positions in a shooter robot.</p>
 
   <h2>Remote Interface</h2>
-
+	<h2>NOTE: SLIDERS ARE NOT YET FUNCTIONAL, USE INCREMENT AND DECREMENT BUTTONS BELOW</h2>
   <p>Set horizontal angle:
     <input type=range cloud_action='update' cloud_name='position_horizontal' cloud_min='95' cloud_max='205' min='95' max='205' value='0'>
   </p>
@@ -33,6 +33,14 @@
   <p><button cloud_action='update' cloud_name='command'>Aim and Shoot</button></p>
 	<p><button cloud_action='update' cloud_name='command'>Reset</button></p>
 	<hr>
+	<h2>USE THE BELOW BUTTONS:</h2>
+	<p>Hit "Stop" after each action</p>
+	<button cloud_action='update' cloud_name='command'>Decrement Angle</button>
+	<button cloud_action='update' cloud_name='command'>Increment Angle</button>
+	<button cloud_action='update' cloud_name='command'>Stop</button>
+	<button cloud_action='update' cloud_name='command'>Slow Throw</button>
+	<button cloud_action='update' cloud_name='command'>Moderate Speed Throw</button>
+	<button cloud_action='update' cloud_name='command'>Fast Throw</button>
 
 	<h2>My Project Quick Links:</h2>
   <p>
