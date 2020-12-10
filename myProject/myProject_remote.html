@@ -11,6 +11,15 @@
 			  background-repeat: no-repeat;
 				background-size: 100% 100%;
 			}
+			#wrapper {
+  			width: 70%;     /* specify a width! */
+  			margin: 0 auto; /* center */
+			}
+			#center {
+			  margin: auto;
+			  width: 60%;
+				text-align: center;
+			}
 </style>
 	</head>
 <body>
@@ -20,13 +29,18 @@
 		<service-airtable id="service_airtable" tablename="finalProject"></service-airtable>
 	</div>
 
+	<div id="wrapper">
   <h1>Baseball Player Arcade Game</h1>
 
-  <p>This project is a baseball based arcade game to be played over the web.</p>
-	<p>Your goal: strike out the automated batter by throwing strikes!</p>
-	<p>How to play: use the buttons below to increase or decrease the angle of the throwing arm. Then, chose the force of your throw.</p>
-	<p>Just hit stop between each action to make sure that the robot responds properly.</p>
+  <p style="color:black">This project is a baseball based arcade game to be played over the web.</p>
+	<p style="color:black">Your goal: strike out the automated batter by throwing strikes!</p>
+	<p style="color:black">How to play: use the buttons below to increase or decrease the angle of the throwing arm. Then, chose the force of your throw.</p>
+	<p style="color:black">Just hit stop between each action to make sure that the robot responds properly.</p>
 
+	<div id="center">
+	<br>
+	<br>
+	<br>
   <h2>Remote Interface</h2>
 	<hr>
 	<h2>USE THE BELOW BUTTONS:</h2>
@@ -37,15 +51,7 @@
 	<button cloud_action='update' cloud_name='command'>Slow Throw</button>
 	<button cloud_action='update' cloud_name='command'>Moderate Speed Throw</button>
 	<button cloud_action='update' cloud_name='command'>Fast Throw</button>
-
-	<h2>My Project Quick Links:</h2>
-  <p>
-    <ul>
-      <li><a href="./myProject_remote.html" target=_blank>My Project Remote Page</a></li>
-      <li><a href="./myProject_local.html" target=_blank>My Project Local Page</a></li>
-    </ul>
-  </p>
-	<p><a href="../index.html">Return back to the main homepage.</a></p>
-
+</div>
+</div>
 </body>
 </html>
